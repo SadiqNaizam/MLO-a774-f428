@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -32,12 +33,13 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+        secondaryText: 'hsl(var(--muted))', // Added for PRD: designSystem.typography.inputLabel.tailwind = "text-secondaryText"
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
+					DEFAULT: 'hsl(var(--muted))', // --muted CSS var now holds PRD's secondaryText color #878A99
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
@@ -65,9 +67,12 @@ export default {
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
+				md: 'calc(var(--radius) - 2px)', // If --radius is 0.5rem (8px), md becomes 6px (0.375rem), matching Tailwind's default rounded-md
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
