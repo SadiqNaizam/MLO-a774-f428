@@ -4,54 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 204.3 63.9% 44.3%; /* PRD: #2980B9 */
+    --foreground: 0 0% 0%; /* PRD: primaryText #000000 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: surface #FFFFFF */
+    --card-foreground: 0 0% 0%; /* PRD: primaryText #000000 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* Default to card */
+    --popover-foreground: 0 0% 0%; /* Default to card-foreground */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 204.3 63.9% 44.3%; /* PRD: buttonBackground #2980B9 */
+    --primary-foreground: 0 0% 100%; /* PRD: buttonText (white) #FFFFFF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Existing, no PRD change */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Existing, no PRD change */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 228 7.3% 56.5%; /* PRD: secondaryText #878A99 */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Existing, for text on muted background */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 240 100% 50%; /* PRD: linkText #0000FF */
+    --accent-foreground: 0 0% 100%; /* White text on bright blue accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Existing, no PRD change */
+    --destructive-foreground: 210 40% 98%; /* Existing, no PRD change */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%; /* Existing, for general borders */
+    --input: 204.3 63.9% 44.3%; /* PRD: Input lines are blue (primary color) */
+    --ring: 204.3 63.9% 44.3%; /* PRD: Focus ring (primary color) */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Existing, compatible with PRD "rounded-md" */
 
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* PRD: primaryFont "Sans-serif" */
+
+    /* Existing sidebar variables - preserved as not contradicted by PRD */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
+    /* Existing dark mode variables - preserved as PRD does not specify dark theme changes */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -97,5 +94,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
   }
 }
